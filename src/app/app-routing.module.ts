@@ -16,6 +16,50 @@ const routes: Routes = [
     path: 'calend-list',
     loadChildren: () => import('./calend-list/calend-list.module').then( m => m.CalendListPageModule)
   },
+  {
+    path: 'calendar',
+    loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
+  {
+    path: 'register-calendar',
+    loadChildren: () => import('./register-calendar/register-calendar.module').then( m => m.RegisterCalendarPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'setting',
+    loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
+  },
+  {
+    path: 'infos',
+    loadChildren: () => import('./infos/infos.module').then( m => m.InfosPageModule)
+  },
+  {
+    path: 'membres',
+    loadChildren: () => import('./membres/membres.module').then( m => m.MembresPageModule)
+  },
+  {
+    path: 'settinglist',
+    loadChildren: () => import('./settinglist/settinglist.module').then( m => m.SettinglistPageModule)
+  },
+  {
+    path: 'infolist',
+    loadChildren: () => import('./infolist/infolist.module').then( m => m.InfolistPageModule)
+  },
+  {
+    path: 'modifinfolist',
+    loadChildren: () => import('./modifinfolist/modifinfolist.module').then( m => m.ModifinfolistPageModule)
+  },
+  {
+    path: 'event',
+    loadChildren: () => import('./event/event.module').then( m => m.EventPageModule)
+  },
+  {
+    path: 'newevent',
+    loadChildren: () => import('./newevent/newevent.module').then( m => m.NeweventPageModule)
+  },
 ];
 
 @NgModule({

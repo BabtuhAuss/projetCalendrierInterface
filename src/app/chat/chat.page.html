@@ -1,0 +1,32 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-back-button slot="start">
+		</ion-back-button>
+		<ion-title>{{id}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-infinite-scroll threshold="2%" (ionInfinite)="loadData($event)" position="top">
+		<ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Chargement des messages" position="top">
+		</ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+	<div class='chat'>
+		<div class='msg' *ngFor="let i of chats">
+			<div class="{{i['class']}}" [ngStyle]="{'background-color' :i.color}">
+				<div class='user'>{{i['login']}}</div>
+				{{i['contenu']}}
+				<div class='hour'>{{i['datemessage']}}</div>
+			</div>
+		</div>
+	</div>
+
+</ion-content>
+
+<div class='envois'>
+	<ion-input (keyup)="onChatKey($event)" type='text' mode='ios' id='chatInput' placeholder='Votre Message'>
+	</ion-input>
+	<ion-button id='buttonEnvois' (click)="send()">
+		<ion-icon name="send"></ion-icon>
+	</ion-button>
+</div>
